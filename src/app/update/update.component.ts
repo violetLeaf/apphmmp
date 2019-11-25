@@ -31,6 +31,7 @@ export class UpdateComponent implements OnInit {
 
       // TODO: muss noch geändert werden, dass die eigentlichen Namen eingelesen werden
       var path = "media/exampleTour1;media/exampleTour2";
+      // var path = "media/exampleTour1;media/exampleTour2;media/exampleTour3;media/exampleTour4";
       // localStorage wird gesetzt wo wir die einzelnen Dateien gesetzt haben
       window.localStorage.setItem("path", path);
       

@@ -24,6 +24,7 @@ export class StartScreenComponent implements OnInit {
     // read json from files
     var pathwhole = window.localStorage.getItem("path");
     var paths = pathwhole.split(';');
+    console.log(paths);
 
     for(var i = 0; i < paths.length; i++){
       this.http.get<TourModel>(cordova.file.dataDirectory + paths[i] + "/route.json").subscribe(res => {
@@ -36,7 +37,7 @@ export class StartScreenComponent implements OnInit {
     //   this.tours.push(res);
     // });
 
-    this.tours.sort(function(a, b){return b.date - a.date});
+    this.tours.sort(function(a, b){return Number(b.date) - Number(a.date)});
   }
 
   onTourClick(tour: TourModel) {
