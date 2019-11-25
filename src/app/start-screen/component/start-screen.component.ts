@@ -35,6 +35,8 @@ export class StartScreenComponent implements OnInit {
     // this.http.get<TourModel>(cordova.file.dataDirectory + "media/exampleTour1/route.json").subscribe(res => {
     //   this.tours.push(res);
     // });
+
+    this.tours.sort(function(a, b){return b.date - a.date});
   }
 
   onTourClick(tour: TourModel) {
