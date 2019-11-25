@@ -4,9 +4,18 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-if (environment.production) {
-  enableProdMode();
-}
+let onDeviceReady = () => {
+  platformBrowserDynamic().bootstrapModule(AppModule);
+  if (environment.production) {
+    screen.orientation.lock('landscape');
+  }
+};
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+if (environment.production) {
+  // using Cordova
+  document.addEventListener('deviceready', onDeviceReady, false);
+  enableProdMode();
+} else {
+  // without Cordova
+  onDeviceReady();
+}

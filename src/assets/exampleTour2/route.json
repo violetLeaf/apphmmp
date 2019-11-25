@@ -1,0 +1,31 @@
+{
+	"name": "Schulklasse B",
+  "date": "2020-11-17T16:30:00",
+	"areas": [
+		{
+			"name": "Werk 1",
+			"stations": [
+				{
+					"name": "Maschine 1",
+					"media": [
+						{
+							"type": "image",
+							"path": "image1.png"
+						}
+					]
+				}, {
+					"name": "Maschine 2",
+					"media": [
+						{
+							"type": "text",
+							"text": "Das ist ein Beschreibungstext"
+						}, {
+							"type": "video",
+							"path": "video.mp4"
+						}
+					]
+				}
+			]
+		}
+	]
+}
