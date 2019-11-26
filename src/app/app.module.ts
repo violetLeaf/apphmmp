@@ -16,6 +16,7 @@ import { StartScreenComponent } from './start-screen/component/start-screen.comp
 import { PagenotfoundComponent } from './page-not-found/pagenotfound.component';
 import { TouractComponent } from './tour-act/component/touract.component';
 import { UpdateComponent } from './update/update.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { UpdateComponent } from './update/update.component';
     MatListModule,
     MatToolbarModule,
     MatIconModule,
+    NgbModule
   ],
   exports: [
     CommonModule,

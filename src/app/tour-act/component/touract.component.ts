@@ -1,11 +1,13 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, NgModule } from '@angular/core';
 import {Router} from '@angular/router';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import TourModel from '../../shared/tour.model';
 
 @Component({
   selector: 'app-touract',
   templateUrl: './touract.component.html',
-  styleUrls: ['./touract.component.scss']
+  styleUrls: ['./touract.component.scss'],
+  encapsulation: ViewEncapsulation.Native
 })
 
 export class TouractComponent implements OnInit {
@@ -25,4 +27,6 @@ export class TouractComponent implements OnInit {
   ngOnInit() {
     console.log(this.currentTour);
   }
+
+  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 }
