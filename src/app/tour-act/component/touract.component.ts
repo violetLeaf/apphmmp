@@ -26,7 +26,11 @@ export class TouractComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.currentTour);
+    console.log(this.currentTour.areas);
+    console.log(this.currentTour.areas[0].name);
+    console.log(this.currentTour);
+
   }
 
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  // images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 }
