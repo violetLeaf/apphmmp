@@ -25,11 +25,22 @@ export class TouractComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.currentTour);
-    console.log(this.currentTour.areas);
-    console.log(this.currentTour.areas[0].name);
-    console.log(this.currentTour);
+    var vorh_areas:number = 0;
+    var vorh_stations:number = 0;
+    var vorh_media:number = 0;
 
+    this.currentTour.areas.forEach(e => {
+      console.log(e.name);
+      e.stations.forEach(ee => {
+        console.log(ee.name);
+        ee.media.forEach(eee => {
+          console.log(eee.type);
+          vorh_media++;
+        });
+        vorh_stations++;
+      });
+      vorh_areas++;
+    });
   }
 
   // images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);

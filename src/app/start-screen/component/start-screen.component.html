@@ -2,7 +2,7 @@
   <h2>Tours</h2>
 
   <mat-list >
-    <mat-list-item class="mat-list-item" *ngFor="let tour of tours" (click)="onTourClick(tour)">
+    <mat-list-item class="mat-list-item" *ngFor="let tour of sortedTours" (click)="onTourClick(tour)">
       {{tour.name}} / {{tour.date | date:'dd.LL.yyyy HH:mm'}}
     </mat-list-item>
   </mat-list>

@@ -24,7 +24,7 @@ export class StartScreenComponent implements OnInit {
     // read json from files
     var pathwhole = window.localStorage.getItem("path");
     var paths = pathwhole.split(';');
-    console.log(paths);
+    // console.log(paths);
 
     for(var i = 0; i < paths.length; i++){
       this.http.get<TourModel>(cordova.file.dataDirectory + paths[i] + "/route.json").subscribe(res => {
@@ -37,11 +37,15 @@ export class StartScreenComponent implements OnInit {
     //   this.tours.push(res);
     // });
 
-    this.tours.sort(function(a, b){return Number(b.date) - Number(a.date)});
+    // this.tours = this.tours.sort(function(a, b){return Number(b.date) - Number(a.date)});
   }
 
   onTourClick(tour: TourModel) {
     this.router.navigate(['/tour-act'], {state: {data: {tour}}});
+  }
+
+  public get sortedTours(): TourModel[]{
+    return this.tours.sort((a, b)=> {return <any>new Date(a.date) - <any>new Date(b.date)});
   }
 }
 

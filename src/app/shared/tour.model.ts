@@ -18,7 +18,7 @@
 
   export default interface TourModel {
     name: string;
-    date: Date;
+    date: string;
     areas: Area[];
   }
 
