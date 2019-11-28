@@ -1,18 +1,54 @@
 <h2>Tour {{currentTour.name}}</h2>
+<p>{{ currentTour.date }}</p>
 
 <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet"
+<link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" />
 
-<ngb-carousel *ngIf="currentTour">
-    <ng-template ngbSlide *ngFor="let item of currentTour; index as i">
-        <!-- Vorerst nicht wichtig
-        <div class="picsum-img-wrapper">
-          <img [src]="images[0]" alt="Random first slide">
-        </div> -->
-        <div class="carousel-caption" >
-          <p>{{ item. }}</p>
-        </div>
-      </ng-template>
-</ngb-carousel>
+    <ngb-carousel *ngIf="currentTour">
+      <!-- Looping through Areas -->
+      <div *ngFor="let t of currentTour.areas;">
+        <!-- Looping through Stations -->
+        <div *ngFor="let tt of t.stations;">
+          <!-- Looping through Media -->
+
+          <ng-template ngbSlide *ngFor="let ttt of tt.media; index as i">
+            <!-- In case of a text: -->
+            <div *ngIf="ttt.type === 'text'">
+              <div class="picsum-img-wrapper">
+                <img src="{{ images[0] }}" alt="text">
+              </div>
+              <div class="carousel-caption" >
+                <p>{{ ttt.text }}</p>
+              </div>
+            </div>
+            <!-- In case of a picture: -->
+            <div *ngIf="ttt.type === 'image'">
+              <div class="picsum-img-wrapper">
+                <img src="{{ images[1] }}" alt="bild">
+              </div>
+              <div class="carousel-caption" >
+                <p>Dies ist ein Bild</p>
+              </div>
+            </div>
+            <!-- In case of a video: -->
+            <div *ngIf="ttt.type === 'video'">
+              <div class="picsum-img-wrapper">
+                <img src= "{{ images[2] }}" alt="video">
+              </div>
+              <div class="carousel-caption" >
+                <p>Dies ist ein Video</p>
+              </div>
+            </div>
+          </ng-template> <!-- End Media -->
+        </div> <!-- End Stations -->
+      </div> <!-- End Areas -->
+    </ngb-carousel>
+
+<footer>
+  <p>Areas: {{ curr_area }} / {{ vorh_areas }}</p>
+  <p>Station: {{ curr_station }} / {{ vorh_stations }}</p>
+  <p>Media: {{ curr_media }} / {{ vorh_media }}</p>
+  <p>{{ Timer() }}</p>
+</footer>

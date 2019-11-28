@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, NgModule } from '@angular/core';
 import {Router} from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import TourModel from '../../shared/tour.model';
+import { Time } from '@angular/common';
 
 @Component({
   selector: 'app-touract',
@@ -12,6 +13,15 @@ import TourModel from '../../shared/tour.model';
 
 export class TouractComponent implements OnInit {
   currentTour: TourModel;
+  curr_area:number = 0;
+  curr_station:number = 0;
+  curr_media:number = 0;
+
+  vorh_areas:number = 0;
+  vorh_stations:number = 0;
+  vorh_media:number = 0;
+
+  secondspassed:number = 0;
 
   constructor(private router: Router) {
     let stateData = this.router.getCurrentNavigation().extras.state.data;
@@ -25,23 +35,31 @@ export class TouractComponent implements OnInit {
   }
 
   ngOnInit() {
-    var vorh_areas:number = 0;
-    var vorh_stations:number = 0;
-    var vorh_media:number = 0;
-
+    // for the number of Areas, Stations and Media
     this.currentTour.areas.forEach(e => {
-      console.log(e.name);
       e.stations.forEach(ee => {
-        console.log(ee.name);
         ee.media.forEach(eee => {
-          console.log(eee.type);
-          vorh_media++;
+          this.vorh_media++;
         });
-        vorh_stations++;
+        this.vorh_stations++;
       });
-      vorh_areas++;
+      this.vorh_areas++;
     });
+
+    // Timer
+    setInterval(() => {
+      this.secondspassed++;
+    }, 1000);
   }
 
-  // images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  Timer(): string {
+    const minutes: number = Math.floor(this.secondspassed / 60);
+    return minutes + ':' + (this.secondspassed - minutes * 60);
+  }
+
+  countup(data:any){
+    data += 1;
+  }
+
+  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 }
