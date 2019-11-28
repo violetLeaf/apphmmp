@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class UpdateComponent implements OnInit {
 
   constructor() { }
+  
+  todisplay:string;
 
   ngOnInit() {
     // code für cordova, plugin in cordova
@@ -20,14 +22,18 @@ export class UpdateComponent implements OnInit {
     document.addEventListener("DOWNLOADER_error", function(event){
       console.log("downloader_error: ");
       console.log(event);
+      this.todisplay = "https://http.cat/418";
     });
     document.addEventListener("DOWNLOADER_downloadError", function(event){
       console.log("DOWNLOADER_downloadError: ");
       console.log(event);
+      this.todisplay = "https://http.cat/502";
     });
     document.addEventListener("DOWNLOADER_downloadSuccess", function(event){
       console.log("DOWNLOADER_downloadSuccess: ");
       console.log(event);
+      this.todisplay = "https://http.cat/200";
+
 
       // TODO: muss noch geändert werden, dass die eigentlichen Namen eingelesen werden
       // var path = "media/exampleTour1;media/exampleTour2";
