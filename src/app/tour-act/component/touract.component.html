@@ -16,9 +16,9 @@
           <ng-template ngbSlide *ngFor="let ttt of tt.media; index as i">
             <!-- In case of a text: -->
             <div *ngIf="ttt.type === 'text'">
-              <div class="picsum-img-wrapper">
-                <img src="{{ images[0] }}" alt="text">
-              </div>
+              <!-- <div class="picsum-img-wrapper">
+                <img src="{{}}" alt="text">
+              </div> -->
               <div class="carousel-caption" >
                 <p>{{ ttt.text }}</p>
               </div>
@@ -26,7 +26,7 @@
             <!-- In case of a picture: -->
             <div *ngIf="ttt.type === 'image'">
               <div class="picsum-img-wrapper">
-                <img src="{{ images[1] }}" alt="bild">
+                <img src="{{ ttt.path }}" alt="bild">
               </div>
               <div class="carousel-caption" >
                 <p>Dies ist ein Bild</p>
@@ -35,7 +35,7 @@
             <!-- In case of a video: -->
             <div *ngIf="ttt.type === 'video'">
               <div class="picsum-img-wrapper">
-                <img src= "{{ images[2] }}" alt="video">
+                <video src= "{{ ttt.path }}" alt="video"></video>
               </div>
               <div class="carousel-caption" >
                 <p>Dies ist ein Video</p>
