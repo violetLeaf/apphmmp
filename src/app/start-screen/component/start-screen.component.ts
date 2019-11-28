@@ -30,6 +30,10 @@ export class StartScreenComponent implements OnInit {
       this.http.get<TourModel>(cordova.file.dataDirectory + paths[i] + "/route.json").subscribe(res => {
         this.tours.push(res);
       });
+      this.http.get<TourModel>(paths[i] + "/route.json").subscribe(res => {
+        res.basePath = cordova.file.dataDirectory + paths[i];
+        this.tours.push(res);
+      });
     }
 
     // statischer Pfad: 

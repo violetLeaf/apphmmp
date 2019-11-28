@@ -26,7 +26,7 @@
             <!-- In case of a picture: -->
             <div *ngIf="ttt.type === 'image'">
               <div class="picsum-img-wrapper">
-                <img src="{{ ttt.path }}" alt="bild">
+                <img src="{{currentTour.basePath}}/media/{{ ttt.path }}" alt="bild">
               </div>
               <div class="carousel-caption" >
                 <p>Dies ist ein Bild</p>
@@ -35,7 +35,7 @@
             <!-- In case of a video: -->
             <div *ngIf="ttt.type === 'video'">
               <div class="picsum-img-wrapper">
-                <video src= "{{ ttt.path }}" alt="video"></video>
+                <video src= "{{currentTour.basePath}}/media/{{ ttt.path }}" alt="video"></video>
               </div>
               <div class="carousel-caption" >
                 <p>Dies ist ein Video</p>

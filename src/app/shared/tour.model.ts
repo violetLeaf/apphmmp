@@ -20,5 +20,6 @@
     name: string;
     date: string;
     areas: Area[];
+    basePath: string;
   }
 
