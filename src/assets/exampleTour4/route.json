@@ -1,6 +1,7 @@
 {
 	"name": "Kunde A",
   "date": "2020-11-17T15:30:00",
+  "folderName": "exampleTour4",
 	"areas": [
 		{
 			"name": "Werk 1",

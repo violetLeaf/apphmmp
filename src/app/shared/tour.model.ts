@@ -18,8 +18,9 @@
 
   export default interface TourModel {
     name: string;
+    folderName: string;
     date: string;
     areas: Area[];
-    basePath: string;
+    completePath: string;
   }
 

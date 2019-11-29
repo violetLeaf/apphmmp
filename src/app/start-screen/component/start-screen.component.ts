@@ -15,6 +15,7 @@ import {Router} from '@angular/router';
 
 @Injectable()
 export class StartScreenComponent implements OnInit {
+  basePath: string = 'file://android_asset/data/data/com.acme.app/files/';
   tours: TourModel[] = [];
 
   constructor(private http: HttpClient, private router: Router) {
@@ -24,24 +25,14 @@ export class StartScreenComponent implements OnInit {
     // read json from files
     var pathwhole = window.localStorage.getItem("path");
     var paths = pathwhole.split(';');
-    // console.log(paths);
 
     for(var i = 0; i < paths.length; i++){
-      this.http.get<TourModel>(cordova.file.dataDirectory + paths[i] + "/route.json").subscribe(res => {
+      this.http.get<TourModel>(this.basePath + paths[i] + "/route.json").subscribe(function(basePath, res) {
+        res.completePath = basePath + 'media/' + res.folderName + '/media/';
+
         this.tours.push(res);
-      });
-      this.http.get<TourModel>(paths[i] + "/route.json").subscribe(res => {
-        res.basePath = cordova.file.dataDirectory + paths[i];
-        this.tours.push(res);
-      });
+      }.bind(this, this.basePath));
     }
-
-    // statischer Pfad: 
-    // this.http.get<TourModel>(cordova.file.dataDirectory + "media/exampleTour1/route.json").subscribe(res => {
-    //   this.tours.push(res);
-    // });
-
-    // this.tours = this.tours.sort(function(a, b){return Number(b.date) - Number(a.date)});
   }
 
   onTourClick(tour: TourModel) {

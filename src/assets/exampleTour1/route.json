@@ -1,6 +1,7 @@
 {
 "name": "Schulklasse A",
   "date": "2019-11-17T17:30:00",
+  "folderName": "exampleTour1",
 	"areas": [
 		{
 			"name": "Werk 1",
