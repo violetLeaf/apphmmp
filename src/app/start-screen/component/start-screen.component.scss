@@ -1,10 +1,47 @@
-h2 {
-  margin: 15px;
+// h2 {
+//   margin: 15px;
+// }
+
+// .mat-list-item {
+//   background-color: grey;
+//   color: white;
+//   margin: 5px 15px;
+//   cursor: pointer;
+// }
+
+*{
+  font-family: Arial;
 }
 
-.mat-list-item {
-  background-color: grey;
-  color: white;
-  margin: 5px 15px;
-  cursor: pointer;
+.mat-list-item p{
+  font-size: 16px;
+  display: inline-block;
+}
+
+.mat-list-item .datum{
+  margin: 10px 100px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  background-color: lightskyblue;
+  color: white; 
+}
+
+.mat-list-item .name2{
+  color: cornflowerblue;
+  font-weight: bold;
+}
+
+.mat-list-item .name{
+  color: gray;
+  font-size: 12px;
+}
+
+.mat-list-item{
+  border: 1px solid gray;
+  margin: 10px 180px;
+  border-radius: 15px;
+}
+
+.mat-list-base{
+  width: 75%;
 }

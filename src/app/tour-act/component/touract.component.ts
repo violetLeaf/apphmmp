@@ -56,10 +56,8 @@ export class TouractComponent implements OnInit {
     const minutes: number = Math.floor(this.secondspassed / 60);
     return minutes + ':' + (this.secondspassed - minutes * 60);
   }
-
-  countup(data:any){
-    data += 1;
-  }
+  
+  
 
   
 

@@ -11,7 +11,7 @@
 					"media": [
 						{
 							"type": "image",
-							"path": "image1.png"
+							"path": "image1.jpg"
 						}
 					]
 				}, {
@@ -19,10 +19,7 @@
 					"media": [
 						{
 							"type": "text",
-							"text": "Das ist ein Beschreibungstext"
-						}, {
-							"type": "video",
-							"path": "video.mp4"
+							"text": "EasyConn 28 mm BESONDERS KOMPAKTE BAUFORM MIT INDIVIDUELL EINSETZBAREM KONTAKTSYSTEM Das patentierte Automotive Steckergehäuse EasyConn zeichnet sich durch eine komfortable und gleichzeitig sichere Rastfunktion sowie ihre verschiedenfarbige und mechanische Kodierung aus. Die Gehäusefamilie ist kompakt und in 2- bis 14-poliger Ausführung verfügbar. Auch hohe thermische Belastungen stellen für EasyConn kein Problem dar. Verschiedenste Kontaktsysteme sind einsetzbar (MCP 2.8 mm, CTS 2.8 mm, MAK 2.8 mm)."
 						}
 					]
 				}

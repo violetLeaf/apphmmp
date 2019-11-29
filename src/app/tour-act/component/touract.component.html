@@ -16,16 +16,18 @@
           <ng-template ngbSlide *ngFor="let ttt of tt.media; index as i">
             <!-- In case of a text: -->
             <!-- Design-Technisch noch einiges an Problemen -->
-              <div class="carousel-caption" >
-                <p style="color: black;">{{ ttt.text }}</p>
+            <div *ngIf="ttt.type === 'text'">
+              <div class="picsum-img-wrapper">
+                <img src="assets\images\textHintergrund.png" alt="bild">
               </div>
+              <div class="carousel-caption">
+                <p>{{ ttt.text }}</p>
+              </div>
+            </div>
             <!-- In case of a picture: -->
             <div *ngIf="ttt.type === 'image'">
               <div class="picsum-img-wrapper">
                 <img src="{{currentTour.completePath + ttt.path}}" alt="bild">
-              </div>
-              <div class="carousel-caption" >
-                <p>Dies ist ein Bild</p>
               </div>
             </div>
             <!-- In case of a video: -->
@@ -33,18 +35,17 @@
               <div class="picsum-img-wrapper">
                 <video autoplay src= "{{currentTour.completePath + ttt.path}}" alt="video"></video>
               </div>
-              <div class="carousel-caption" >
-                <p>Dies ist ein Video</p>
-              </div>
             </div>
           </ng-template> <!-- End Media -->
         </div> <!-- End Stations -->
       </div> <!-- End Areas -->
     </ngb-carousel>
 
-<footer>
-  <p>Areas: {{ curr_area }} / {{ vorh_areas }}</p>
-  <p>Station: {{ curr_station }} / {{ vorh_stations }}</p>
-  <p>Media: {{ curr_media }} / {{ vorh_media }}</p>
-  <p>{{ Timer() }}</p>
-</footer>
+<div class="footer">
+  <p class="area">Areas: {{ curr_area }} / {{ vorh_areas }}</p>
+  <p class="station">Station: {{ curr_station }} / {{ vorh_stations }}</p>
+  <p class="medium">Media: {{ curr_media }} / {{ vorh_media }}</p>
+</div>
+<div class="time">
+  <p class="timep">{{ Timer() }}</p>
+</div>

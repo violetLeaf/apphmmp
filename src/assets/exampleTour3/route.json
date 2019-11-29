@@ -7,20 +7,9 @@
 			"name": "Werk 1",
 			"stations": [
 				{
-					"name": "Maschine 1",
-					"media": [
-						{
-							"type": "image",
-							"path": "image1.jpg"
-						}
-					]
-				}, {
 					"name": "Maschine 2",
 					"media": [
 						{
-							"type": "text",
-							"text": "Das ist ein Beschreibungstext"
-						}, {
 							"type": "video",
 							"path": "video.mp4"
 						}

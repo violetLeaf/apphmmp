@@ -1,0 +1,54 @@
+.carousel{
+    border: 1px solid gray;
+    margin: 10px 90px;
+    border-radius: 20px;
+    height: 760px;
+    padding: 20px;
+}
+
+p{
+font-family: Arial;
+color: black;
+font-size: 16px;
+margin: 0;
+padding: 0;
+}
+
+h2{
+    color: black;
+    font-size: large;
+}
+
+.footer{
+width: 10%;
+display:inline-block;
+height: 44px;
+text-align: center;
+}
+
+.time{
+width:85%;
+display:inline-block;
+text-align: center;
+height: 44px;
+}
+
+.timep{
+width: 8%;
+float:right;
+}
+
+.carousel-caption{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+img{
+    height: 700px;
+    width: auto;
+}
+
+video{
+    width: 100%;
+}
