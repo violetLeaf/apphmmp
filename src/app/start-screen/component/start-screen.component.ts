@@ -15,7 +15,7 @@ import {Router} from '@angular/router';
 
 @Injectable()
 export class StartScreenComponent implements OnInit {
-  basePath: string = 'file://android_asset/data/data/com.acme.app/files/';
+  basePath: string = 'http://localhost:8080/files/';
   tours: TourModel[] = [];
 
   constructor(private http: HttpClient, private router: Router) {
