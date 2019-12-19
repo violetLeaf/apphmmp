@@ -58,7 +58,7 @@ export class TouractComponent implements OnInit {
 
   Timer(): string {
     const minutes: number = Math.floor(this.secondspassed / 60);
-    return minutes + ':' + (this.secondspassed - minutes * 60);
+    return (minutes < 10 ? '0' : '') + minutes + ':' + (this.secondspassed < 10 ? '0' : '') + (this.secondspassed - minutes * 60);
   }
   
   stations:number = 1;
