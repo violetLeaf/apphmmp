@@ -13,9 +13,9 @@ import { Time } from '@angular/common';
 
 export class TouractComponent implements OnInit {
   currentTour: TourModel;
-  curr_area:number = 0;
-  curr_station:number = 0;
-  curr_media:number = 0;
+  curr_area:number = 1;
+  curr_station:number = 1;
+  curr_media:number = 1;
 
   vorh_areas:number = 0;
   vorh_stations:number = 0;
@@ -23,7 +23,7 @@ export class TouractComponent implements OnInit {
 
   secondspassed:number = 0;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, carousel: NgbCarouselConfig) {
     let stateData = this.router.getCurrentNavigation().extras.state.data;
 
     if (stateData !== undefined) {
@@ -32,6 +32,10 @@ export class TouractComponent implements OnInit {
     } else {
       this.router.navigate(['']);
     }
+
+    // Carousel Configuration:
+    carousel.wrap = false;
+    carousel.showNavigationIndicators = false;
   }
 
   ngOnInit() {
@@ -57,6 +61,42 @@ export class TouractComponent implements OnInit {
     return minutes + ':' + (this.secondspassed - minutes * 60);
   }
   
+  stations:number = 1;
+  media:number = 1;
+  changeareacodes = [];
+  changearea:number = 0;
+  changestationcodes = [];
+  changestation:number = 0;
+
+  SlideClick(){
+    
+
+    for (var i = 1; i < this.vorh_areas; i++){
+      // zählt Stationen innerhalb dieser Area aus
+      this.currentTour.areas[i].stations.forEach(e => {  this.stations++;  });
+      this.changeareacodes.push(this.stations);
+      for (var ii = 1; ii < this.stations; ii++){
+        // zählt Media innerhalb dieser Station aus
+        this.currentTour.areas[i].stations[ii].media.forEach(e => {  this.media++;  });
+        this.changestationcodes.push(this.media);
+      }
+    }
+
+    // Stationen und Areas werden noch nicht richtig hochgezählt!! Nochmals ansehen!
+    if (this.curr_media < this.vorh_media){
+      if (this.curr_station < this.vorh_stations){
+        if (this.changestationcodes[this.changestation] == this.curr_media){
+          if (this.curr_area < this.vorh_areas){
+            if (this.changeareacodes[this.changearea] == this.curr_station){
+              this.curr_area++;
+            }
+          }
+        }
+        this.curr_station++;
+      }
+      this.curr_media++;
+    }
+  }
   
 
   

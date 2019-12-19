@@ -12,6 +12,10 @@
 						{
 							"type": "image",
 							"path": "image1.jpg"
+						},
+						{
+							"type": "text",
+							"text": "Dies ist ein Beschreibungstext zur weiteren Überprüfung!"
 						}
 					]
 				}, {
