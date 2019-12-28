@@ -6,7 +6,7 @@
 <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" />
 
-<button (click)="SlideClick()">Testen!</button>
+<!-- <button (click)="SlideClick()">Testen!</button> -->
 
     <ngb-carousel *ngIf="currentTour">
       <!-- Looping through Areas -->
@@ -44,9 +44,9 @@
     </ngb-carousel>
 
 <div class="footer">
-  <p class="area">Areas: {{ curr_area }} / {{ vorh_areas }}</p>
-  <p class="station">Station: {{ curr_station }} / {{ vorh_stations }}</p>
-  <p class="medium">Media: {{ curr_media }} / {{ vorh_media }}</p>
+  <p class="area">Area: {{ curr_area + 1 }} / {{ vorh_areas }}</p>
+  <p class="station">Station: {{ curr_station + 1 }} / {{ vorh_stations }}</p>
+  <p class="medium">Media: {{ curr_media + 1 }} / {{ vorh_media }}</p>
 </div>
 <div class="time">
   <p class="timep">{{ Timer() }}</p>

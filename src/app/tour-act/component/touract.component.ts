@@ -13,13 +13,16 @@ import { Time } from '@angular/common';
 
 export class TouractComponent implements OnInit {
   currentTour: TourModel;
-  curr_area:number = 1;
-  curr_station:number = 1;
-  curr_media:number = 1;
+  curr_area:number = 0;
+  curr_station:number = 0;
+  curr_media:number = 0;
 
   vorh_areas:number = 0;
   vorh_stations:number = 0;
   vorh_media:number = 0;
+
+  mom_stations = [];
+  mom_media = [];  
 
   secondspassed:number = 0;
 
@@ -36,6 +39,8 @@ export class TouractComponent implements OnInit {
     // Carousel Configuration:
     carousel.wrap = false;
     carousel.showNavigationIndicators = false;
+    carousel.showNavigationArrows = true;
+    carousel.interval = 0;
   }
 
   ngOnInit() {
@@ -46,8 +51,12 @@ export class TouractComponent implements OnInit {
           this.vorh_media++;
         });
         this.vorh_stations++;
+        // For station change
+        this.mom_media.push(ee.media.length);
       });
       this.vorh_areas++;
+      // for area change
+      this.mom_stations.push(e.stations.length);
     });
 
     // Timer
@@ -60,41 +69,18 @@ export class TouractComponent implements OnInit {
     const minutes: number = Math.floor(this.secondspassed / 60);
     return (minutes < 10 ? '0' : '') + minutes + ':' + (this.secondspassed < 10 ? '0' : '') + (this.secondspassed - minutes * 60);
   }
-  
-  stations:number = 1;
-  media:number = 1;
-  changeareacodes = [];
-  changearea:number = 0;
-  changestationcodes = [];
-  changestation:number = 0;
 
   SlideClick(){
-    
+    this.curr_media++;
 
-    for (var i = 1; i < this.vorh_areas; i++){
-      // zählt Stationen innerhalb dieser Area aus
-      this.currentTour.areas[i].stations.forEach(e => {  this.stations++;  });
-      this.changeareacodes.push(this.stations);
-      for (var ii = 1; ii < this.stations; ii++){
-        // zählt Media innerhalb dieser Station aus
-        this.currentTour.areas[i].stations[ii].media.forEach(e => {  this.media++;  });
-        this.changestationcodes.push(this.media);
-      }
-    }
-
-    // Stationen und Areas werden noch nicht richtig hochgezählt!! Nochmals ansehen!
-    if (this.curr_media < this.vorh_media){
-      if (this.curr_station < this.vorh_stations){
-        if (this.changestationcodes[this.changestation] == this.curr_media){
-          if (this.curr_area < this.vorh_areas){
-            if (this.changeareacodes[this.changearea] == this.curr_station){
-              this.curr_area++;
-            }
-          }
-        }
+    // funktioniert noch nicht
+    if ( this.curr_media < this.vorh_media){
+      if (this.curr_media = this.mom_media[(this.curr_station)]){
         this.curr_station++;
       }
-      this.curr_media++;
+      if (this.curr_station = this.mom_stations[(this.curr_area)]){
+        this.curr_area++;
+      }
     }
   }
   

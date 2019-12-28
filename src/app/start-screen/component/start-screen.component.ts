@@ -24,7 +24,7 @@ export class StartScreenComponent implements OnInit {
   ngOnInit() {
     // read json from files
     var pathwhole = window.localStorage.getItem("path");
-    console.log(pathwhole);
+    // console.log(pathwhole);
     var paths = pathwhole.split(';');
 
     for(var i = 0; i < paths.length; i++){

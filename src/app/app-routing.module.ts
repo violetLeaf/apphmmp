@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: StartScreenComponent},
   { path: 'tour-act', pathMatch: 'full', component: TouractComponent},
   { path: 'update', pathMatch: 'full', component: UpdateComponent},
-  { path: '**', component: PagenotfoundComponent}
+  { path: '**', component: PagenotfoundComponent},
 ];
 
 @NgModule({

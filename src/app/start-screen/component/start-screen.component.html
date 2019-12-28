@@ -1,5 +1,5 @@
 <div>
-  <mat-list >
+  <mat-list>
     <mat-list-item class="mat-list-item" *ngFor="let tour of sortedTours" (click)="onTourClick(tour)">
       <p class="datum">{{tour.date | date:'dd.LL.yyyy HH:mm'}}</p> <p class="name">{{tour.name}}</p>
     </mat-list-item>
