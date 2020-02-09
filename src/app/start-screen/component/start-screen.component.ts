@@ -41,7 +41,10 @@ export class StartScreenComponent implements OnInit {
   }
 
   public get sortedTours(): TourModel[]{
-    return this.tours.sort((a, b)=> {return <any>new Date(a.date) - <any>new Date(b.date)});
+    if (this.tours != null || this.tours != undefined)
+      return this.tours.sort((a, b)=> {return <any>new Date(a.date) - <any>new Date(b.date)});
+    else
+      return null;
   }
 }
 

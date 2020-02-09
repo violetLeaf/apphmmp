@@ -1,4 +1,9 @@
-.example-fill-remaining-space {
+$hm_blue: rgb(0 85 151);
+$hm_darkgray: rgb(112 113 115);
+$hm_gray: rgb(194 195 196);
+$hm_lighgray: rgb(236 236 237);
+
+.fill-remaining-space {
   /* This fills the remaining space, by using flexbox.
      Every toolbar row uses a flexbox row layout. */
   flex: 1 1 auto;
@@ -9,16 +14,21 @@ span {
 }
 
 a {
-  color: white;
+  color: $hm_darkgray;
   text-decoration: none;
 }
 
 mat-toolbar {
-  background-color: skyblue;
-  height: 100px;
+  background-color: white;
+  height: 80px;
 }
 
-img{
-  height: 100px;
+.logo{
+  height: 70px;
+  width: auto;
+}
+
+.icon {
+  height: 30px;
   width: auto;
 }

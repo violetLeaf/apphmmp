@@ -1,5 +1,8 @@
-<h2>Tour {{currentTour.name}}</h2>
-<p>{{ currentTour.date }}</p>
+<div class="header">
+  <h2>Tour {{currentTour.name}}</h2>
+  <span class="fill-remaining-space"></span>
+  <p style="display: inline;">{{ currentTour.date | date:'dd.LL.yyyy HH:mm' }}</p>
+</div>
 
 <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
@@ -48,6 +51,7 @@
   <p class="station">Station: {{ curr_station + 1 }} / {{ vorh_stations }}</p>
   <p class="medium">Media: {{ curr_media + 1 }} / {{ vorh_media }}</p>
 </div>
+<span class="fill-remaining-space"></span>
 <div class="time">
   <p class="timep">{{ Timer() }}</p>
 </div>

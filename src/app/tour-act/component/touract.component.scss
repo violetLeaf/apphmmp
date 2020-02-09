@@ -1,54 +1,113 @@
+$hm_blue: rgb(0 85 151);
+$hm_darkgray: rgb(112 113 115);
+$hm_gray: rgb(194 195 196);
+$hm_lighgray: rgb(236 236 237);
+
+$car_height: 630px;
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
 .carousel{
-    border: 1px solid gray;
+    border: 1px solid $hm_darkgray;
     margin: 10px 90px;
     border-radius: 20px;
-    height: 760px;
+    height: $car_height;
     padding: 20px;
 }
 
+.carousel-control-prev{
+    background-color: $hm_blue;
+    opacity: 1 !important;
+    margin-top: 4%;
+
+    left: -8% !important;
+    height: $car_height - 100px;
+    
+    border-radius: 20px;
+    width: 7% !important;
+}
+.carousel-control-next{
+    background-color: $hm_blue !important;
+    opacity: 1 !important;
+    margin-top: 4%;
+
+    right: -8% !important;
+    height: $car_height - 100px;
+    
+    border-radius: 20px;
+    width: 7% !important;
+}
+
 p{
-font-family: Arial;
-color: black;
-font-size: 16px;
-margin: 0;
-padding: 0;
+    font-family: Arial;
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
 }
 
 h2{
     color: black;
-    font-size: large;
+    font-size: medium;
+    display: inline;
+    align-content: center;
+
+    margin-right: 10px;
+}
+
+.header{
+    width: 100%;
+
+    align-content: center;
+
+    margin: 0px 10% 0px 10%;
 }
 
 .footer{
-width: 10%;
-display:inline-block;
-height: 44px;
-text-align: center;
+    width: 40%;
+    display:inline-block;
+    text-align: center;
+    height: 10px;
+}
+
+.footer > p{
+    display: inline;
 }
 
 .time{
-width:85%;
-display:inline-block;
-text-align: center;
-height: 44px;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    height: 10px;
 }
 
 .timep{
-width: 8%;
-float:right;
+    width: 8%;
+    float:right;
 }
 
 .carousel-caption{
     position: absolute;
     top: 10%;
     left: 10%;
+    font-size: large;
 }
 
 img{
-    height: 700px;
+    max-height: $car_height - 50px;
+    max-width: 100%;
+
+    height: auto;
     width: auto;
 }
 
 video{
-    width: 100%;
+    max-height: $car_height - 50px;
+    max-width: 100%;
+
+    height: auto;
+    width: auto;
 }

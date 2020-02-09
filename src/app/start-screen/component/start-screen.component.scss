@@ -1,43 +1,49 @@
-// h2 {
-//   margin: 15px;
-// }
-
-// .mat-list-item {
-//   background-color: grey;
-//   color: white;
-//   margin: 5px 15px;
-//   cursor: pointer;
-// }
+$hm_blue: rgb(0 85 151);
+$hm_darkgray: rgb(112 113 115);
+$hm_gray: rgb(194 195 196);
+$hm_lighgray: rgb(236 236 237);
 
 *{
   font-family: Arial;
 }
 
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
 .mat-list-item p{
   font-size: 16px;
   display: inline-block;
+  margin-left: 20px;
 }
 
 .mat-list-item .datum{
-  margin: 10px 100px;
+  margin: 10px 90px;
   padding: 8px 15px;
   border-radius: 10px;
-  background-color: lightskyblue;
+  background-color: $hm_blue;
   color: white; 
 }
 
-.mat-list-item .name2{
-  color: cornflowerblue;
-  font-weight: bold;
+.mat-list-item .desn{
+  color: $hm_darkgray;
+}
+
+.mat-list-item .desg{
+  color: $hm_darkgray;
 }
 
 .mat-list-item .name{
-  color: gray;
-  font-size: 12px;
+  color: $hm_blue;
+  font-weight: bold;
+}
+
+.mat-list-item .guide{
+  color: black;
 }
 
 .mat-list-item{
-  border: 1px solid gray;
+  border: 1px solid $hm_gray;
   margin: 10px 180px;
   border-radius: 15px;
 }
