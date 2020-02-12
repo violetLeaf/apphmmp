@@ -20,10 +20,10 @@ $car_height: 630px;
 .carousel-control-prev{
     background-color: $hm_blue;
     opacity: 1 !important;
-    margin-top: 4%;
+    margin-top: 8%;
 
     left: -8% !important;
-    height: $car_height - 100px;
+    height: $car_height - 200px;
     
     border-radius: 20px;
     width: 7% !important;
@@ -31,10 +31,10 @@ $car_height: 630px;
 .carousel-control-next{
     background-color: $hm_blue !important;
     opacity: 1 !important;
-    margin-top: 4%;
+    margin-top: 8%;
 
     right: -8% !important;
-    height: $car_height - 100px;
+    height: $car_height - 200px;
     
     border-radius: 20px;
     width: 7% !important;
