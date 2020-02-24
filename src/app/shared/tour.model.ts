@@ -1,26 +1,35 @@
 
 
-  export interface Medium {
+  export interface Media {
+    id: number;
     type: string;
-    path: string;
-    text: string;
+    caption: string;
+    text?: string;
+    url?: string;
   }
 
   export interface Station {
+    id: number;
     name: string;
-    media: Medium[];
+    media: Media[];
   }
 
   export interface Area {
-    name: string;
+    id: number;
+    title: string;
+    position: number;
     stations: Station[];
   }
 
   export default interface TourModel {
-    name: string;
-    folderName: string;
-    date: string;
+    id: number;
+    title: string;
+    reversible: boolean;
+    guide: string;
+    date: Date;
     areas: Area[];
+    
+    folderName: string;
     completePath: string;
   }
 
