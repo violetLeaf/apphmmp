@@ -18,7 +18,7 @@
         <div *ngFor="let tt of t.stations;">
           <!-- Looping through Media -->
 
-          <ng-template ngbSlide *ngFor="let ttt of tt.media; index as i">
+          <ng-template ngbSlide *ngFor="let ttt of tt.medias; index as i">
             <!-- In case of a text: -->
             <!-- Design-Technisch noch einiges an Problemen -->
             <div *ngIf="ttt.type === 'text'">

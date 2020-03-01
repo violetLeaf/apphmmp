@@ -35,7 +35,7 @@ export class UpdateComponent implements OnInit {
       // downloader.get("https://file-examples.com/wp-content/uploads/2017/02/zip_2MB.zip");
       this.tours.forEach(tour => {
         // create the zip-file
-        this.http.get(environment.webserviceUrl + "tourapp/" + tour.id);
+        // this.http.get(environment.webserviceUrl + "tourapp/" + tour.id);
 
         // create the path to the zip-file
         this.path += "media/tour_" + tour.id + ";";

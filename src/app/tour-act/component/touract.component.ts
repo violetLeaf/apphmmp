@@ -22,7 +22,7 @@ export class TouractComponent implements OnInit {
   vorh_media:number = 0;
 
   mom_stations = [];
-  mom_media = [];  
+  mom_medias = [];  
 
   secondspassed:number = 0;
 
@@ -47,12 +47,12 @@ export class TouractComponent implements OnInit {
     // for the number of Areas, Stations and Media
     this.currentTour.areas.forEach(e => {
       e.stations.forEach(ee => {
-        ee.media.forEach(eee => {
+        ee.medias.forEach(eee => {
           this.vorh_media++;
         });
         this.vorh_stations++;
         // For station change
-        this.mom_media.push(ee.media.length);
+        this.mom_medias.push(ee.medias.length);
       });
       this.vorh_areas++;
       // for area change
@@ -75,7 +75,7 @@ export class TouractComponent implements OnInit {
 
     // funktioniert noch nicht
     if ( this.curr_media < this.vorh_media){
-      if (this.curr_media = this.mom_media[(this.curr_station)]){
+      if (this.curr_media = this.mom_medias[(this.curr_station)]){
         this.curr_station++;
       }
       if (this.curr_station = this.mom_stations[(this.curr_area)]){

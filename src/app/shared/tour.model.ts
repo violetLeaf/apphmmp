@@ -11,7 +11,7 @@
   export interface Station {
     id: number;
     name: string;
-    media: Media[];
+    medias: Media[];
   }
 
   export interface Area {
